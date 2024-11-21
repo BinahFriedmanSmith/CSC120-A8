@@ -10,7 +10,7 @@ Listed below are various aspects of the assignment.  When you turn in your work,
 
 ## Assignment Points:
 
-_____ 10 pts: The class meaningfully implements each of the methods in described in the `Contract` interface:
+**YES** 10 pts: The class meaningfully implements each of the methods in described in the `Contract` interface:
 
       **YES**  `void grab(String item);`
       **YES**  `String drop(String item);`
@@ -44,4 +44,4 @@ __**YES**___ 2 pts: Executes fully & consistently without crashing (exception/fr
 
 **YES** 1 pt: All required files included with submission (including completed `rubric.md` file)
 
-_____ 1 pt: `reflection.md` contains your reflection on the assignment, **including a detailed description of the class you implemented and what it does**
+**YES** 1 pt: `reflection.md` contains your reflection on the assignment, **including a detailed description of the class you implemented and what it does**

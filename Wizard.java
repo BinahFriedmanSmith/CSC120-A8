@@ -12,7 +12,7 @@ public class Wizard implements Contract{
 
     private Room location; //room the wizard is in
     @SuppressWarnings("unused")
-    private final Map map; //map the rooms are in
+    private final GameMap map; //map the rooms are in
 
     //these are all for the undo method
     private String prevAction;
@@ -24,7 +24,7 @@ public class Wizard implements Contract{
      * @param startingRoom the room the wizard will be in when they are created
      * @param map environment the wizard is in
      */
-    public Wizard(Room startingRoom, Map map ){
+    public Wizard(Room startingRoom, GameMap map ){
         inventory = new ArrayList<>();
         size = 1;
         spellslots = 5;
@@ -168,22 +168,21 @@ public class Wizard implements Contract{
             System.out.println("You are spent! You cannot cast any more spells until you rest.");
             return false;
         }    
-        /*
-        NOTE: The code flat-out refuses to call most methods from Map. I fear i may be missing something obvious but i cannot figure it out and so i am giving up before i throw my computer clean across the room.
+        //*
+        //NOTE: The code flat-out refuses to call most methods from Map. I fear i may be missing something obvious but i cannot figure it out and so i am giving up before i throw my computer clean across the room.
         
-        if (!map.inXBounds(x) || !map.inYBounds(y)){
+        if (!GameMap.inXBounds(x) || !GameMap.inYBounds(y)){
             System.out.println("Cannot fly out of bounds");
             return false;
         } 
         prevAction = "fly";
         prevActionString = "" + x;
         prevActionInt = y;
-        location = map.getRoom(map.to1D(x,y));
+        System.out.println("You fly to the room at " + x + "," + y);
+        location = map.getRoom(GameMap.to1D(x,y));
         spellslots -= 1;
         return true;
-        // */
-        System.out.println("Sorry, flying has been disabled on this server. Walk like a peasant.");
-        return false;
+
     }
 
     /**

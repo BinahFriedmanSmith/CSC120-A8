@@ -1,5 +1,5 @@
 //ok i have an Idea so if i have time i'll do it if not this is a placeholder
-public class Map{
+public class GameMap{
 
     private static final int width = 3;
     private static final int height = 3;
@@ -8,7 +8,7 @@ public class Map{
     /**  
      * Constructor. creates a grid of rooms and connects them to eacj other
     */
-    public Map(){
+    public GameMap(){
         rooms = new Room[width * height];
         for (int i = 0; i < rooms.length; i++){
             rooms[i] = new Room();
@@ -32,7 +32,7 @@ public class Map{
     /**
      * @return whether coordinate is in bounds horizontally
      */
-    public boolean inXBounds(int x){
+    public static boolean inXBounds(int x){
         return (x>= 0 && x < width);
     }
 
@@ -83,7 +83,7 @@ public class Map{
     }
 
     public static void main(String[] args){
-        Map myMap = new Map();
+        GameMap myMap = new GameMap();
         String orb = "Orb";
         myMap.getRoom(4).addItem(orb);
         myMap.getRoom(5).addItem("Wand");
@@ -129,5 +129,6 @@ public class Map{
         pesto.undo();        
         pesto.rest();  
         pesto.grow();
+        pesto.fly(0,0);
     }
 }
